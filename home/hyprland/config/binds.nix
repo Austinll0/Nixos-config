@@ -1,9 +1,9 @@
 {
     wayland.windowManager.hyprland.settings = {
-        "$terminal" = "kitty"
-        "$fileManager" = "dolphin"
-        "$menu" = "rofi -show drun -show-icons"
-        "$mainMod" = "SUPER"
+        "$terminal" = "kitty";
+        "$fileManager" = "dolphin";
+        "$menu" = "rofi -show drun -show-icons";
+        "$mainMod" = "SUPER";
         # KEYBOARD BINDS
         bind = [
             # BASIC COMMMANDS

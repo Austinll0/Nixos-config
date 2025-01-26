@@ -6,6 +6,7 @@
         imports = [
             ./shell/default.nix
             ./git.nix
+            ./hyprland/default.nix
         ];
 	home.packages = with pkgs; [ 
 		# hyprland stuff
