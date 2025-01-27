@@ -9,6 +9,10 @@
             "HYPRCURSOR_SIZE,24"
         ];
 
+        gestures = {
+            workspace_swipe = true;
+            workspace_swipe_fingers = 3;
+        };
     };
 
 }
