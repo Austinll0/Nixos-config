@@ -13,6 +13,15 @@
             workspace_swipe = true;
             workspace_swipe_fingers = 3;
         };
+
+        input = {
+            kb_layout = "us";
+            follow_mouse = 1;
+            touchpad = {
+                natural_scroll = false;
+            };
+
+        };
     };
 
 }

@@ -33,36 +33,36 @@
             "$mainMod SHIFT, right, movewindow, r"
 
             # CHANGE ACTIVE WORKSPACE BY 1
-            "$mainMod CTRL, l, workspace, e-1"
-            "$mainMod CTRL, r, workspace, e+1"
+            "$mainMod CTRL, left, workspace, r-1"
+            "$mainMod CTRL, right, workspace, r+1"
 
             # MOVE WINDOW OVER 1 WORKSPACE
-            "$mainMod SHIFT CTRL, left, movetoworkspace, e-1"
-            "$mainMod SHIFT CTRL, right, movetoworkspace, e+1"
+            "$mainMod SHIFT CTRL, left, movetoworkspace, r-1"
+            "$mainMod SHIFT CTRL, right, movetoworkspace, r+1"
             
             # MOVE TO SPECIFIED WORKSPACE
-            "$maindMod CTRL, 1, workspace, 1"
-            "$maindMod CTRL, 2, workspace, 2"
-            "$maindMod CTRL, 3, workspace, 3"
-            "$maindMod CTRL, 4, workspace, 4"
-            "$maindMod CTRL, 5, workspace, 5"
-            "$maindMod CTRL, 6, workspace, 6"
-            "$maindMod CTRL, 7, workspace, 7"
-            "$maindMod CTRL, 8, workspace, 8"
-            "$maindMod CTRL, 9, workspace, 9"
-            "$maindMod CTRL, 0, workspace, 0"
+            "$mainMod, 1, workspace, 1"
+            "$mainMod, 2, workspace, 2"
+            "$mainMod, 3, workspace, 3"
+            "$mainMod, 4, workspace, 4"
+            "$mainMod, 5, workspace, 5"
+            "$mainMod, 6, workspace, 6"
+            "$mainMod, 7, workspace, 7"
+            "$mainMod, 8, workspace, 8"
+            "$mainMod, 9, workspace, 9"
+            "$mainMod, 0, workspace, 0"
 
             # MOVE WINDOW TO SPECIFIED WORKSPACE
-            "$maindMod SHIFT CTRL, 1, movetoworkspace, 1"
-            "$maindMod SHIFT CTRL, 2, movetoworkspace, 2"
-            "$maindMod SHIFT CTRL, 3, movetoworkspace, 3"
-            "$maindMod SHIFT CTRL, 4, movetoworkspace, 4"
-            "$maindMod SHIFT CTRL, 5, movetoworkspace, 5"
-            "$maindMod SHIFT CTRL, 6, movetoworkspace, 6"
-            "$maindMod SHIFT CTRL, 7, movetoworkspace, 7"
-            "$maindMod SHIFT CTRL, 8, movetoworkspace, 8"
-            "$maindMod SHIFT CTRL, 9, movetoworkspace, 9"
-            "$maindMod SHIFT CTRL, 0, movetoworkspace, 0"
+            "$mainMod SHIFT, 1, movetoworkspace, 1"
+            "$mainMod SHIFT, 2, movetoworkspace, 2"
+            "$mainMod SHIFT, 3, movetoworkspace, 3"
+            "$mainMod SHIFT, 4, movetoworkspace, 4"
+            "$mainMod SHIFT, 5, movetoworkspace, 5"
+            "$mainMod SHIFT, 6, movetoworkspace, 6"
+            "$mainMod SHIFT, 7, movetoworkspace, 7"
+            "$mainMod SHIFT, 8, movetoworkspace, 8"
+            "$mainMod SHIFT, 9, movetoworkspace, 9"
+            "$mainMod SHIFT, 0, movetoworkspace, 0"
         ];
         # MOUSE BINDS
         bindm = [
