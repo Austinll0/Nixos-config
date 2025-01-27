@@ -19,25 +19,30 @@
         
     };
 
-    outputs = {nixpkgs,home-manager,...}@inputs: {
-        nixosConfigurations = {
-            laptop = nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
-                modules = [
-                        # Import the previous configuration.nix we used,
-                        # so the old configuration file still takes effect
-                        ./hosts/laptop
-                        
-                        # enable home-manager module
-                        home-manager.nixosModules.home-manager
-                        {
-                                home-manager.useGlobalPkgs = true;
-                                home-manager.useUserPackages = true;
-                                home-manager.users.austinl = import ./home;
-                                home-manager.backupFileExtension = "hm-backup"; #allow home-manager to override files and back them up
-                        }
-                ];
+    outputs = {nixpkgs,home-manager,...}@inputs: 
+        # Home configurations
+        let 
+            system = "x86_64-linux";
+            pkgs = nixpkgs.legacyPackages.${system};
+        in{
+            # System configurations
+            nixosConfigurations = {
+                # Laptop config
+                laptop = nixpkgs.lib.nixosSystem {
+                    inherit system;
+                    modules = [
+                            # Import the previous configuration.nix we used,
+                            # so the old configuration file still takes effect
+                            ./hosts/laptop
+                    ];
+                };
+            };
+            homeConfigurations = {
+                # My configs
+                austinl = home-manager.lib.homeManagerConfiguration {
+                    inherit pkgs;
+                    modules = [./home  ];
+                };
             };
         };
-    };
 }

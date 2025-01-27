@@ -1,4 +1,4 @@
 {pkgs,...}:
 {
-environment.systemPackages = [pkgs.home-manger];
+environment.systemPackages = [pkgs.home-manager];
 }
