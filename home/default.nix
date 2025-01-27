@@ -8,7 +8,7 @@
         ./shell/default.nix
         ./git.nix
         ./hyprland/default.nix
-        ./wayland/default.nix
+        ./waybar/default.nix
     ];
     home.packages = with pkgs; [ 
             # hyprland stuff

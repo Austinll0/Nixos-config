@@ -1,9 +1,9 @@
 {pkgs,...}:
 {
-environment.systemPackages = [pkgs.waybar];
+home.packages = [pkgs.waybar];
 
-waybar.enable = true;
-home.file.".config/waybar/config.jsonc" = "../themes/observer/config.jsonc"
-home.file.".config/waybar/style.css" = "../themes/observer/style.css"
+programs.waybar.enable = true;
+home.file.".config/waybar/config.jsonc".source = ../themes/observer/waybar/config.jsonc;
+home.file.".config/waybar/style.css".source = ../themes/observer/waybar/style.css;
 
 }
