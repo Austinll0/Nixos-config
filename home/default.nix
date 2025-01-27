@@ -8,6 +8,7 @@
         ./shell/default.nix
         ./git.nix
         ./hyprland/default.nix
+        ./wayland/default.nix
     ];
     home.packages = with pkgs; [ 
             # hyprland stuff
@@ -15,7 +16,6 @@
             slurp
             rofi
             mako
-            waybar
             swww
             spotify		
             discord
