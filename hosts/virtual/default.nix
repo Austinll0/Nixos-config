@@ -2,26 +2,30 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{inputs, config, pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  # hyprland 
+  programs.hyprland.enable = true;
+  #programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  # some tutorial told me to add the above but it breaks the system so I need to get back to this one day
+
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
-
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = ["i915.force_probe=7d55"]; # necessary for intel arc GPU, meteor lake gen
   networking.hostName = "virtual"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
+  
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -43,12 +47,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # Enable the flakes feature and the new CLI tool
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -58,8 +59,10 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
+  
   # Enable sound with pipewire.
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -81,27 +84,51 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.austinl = {
     isNormalUser = true;
-    description = "austin lafever";
+    description = "Austin laFever";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  # Enable automatic login for the user.
+  #services.displayManager.autoLogin.enable = true;
+  #services.displayManager.autoLogin.user = "austinl";
+
+  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  git
-  #  wget
+  # text editor
+  vim
+
+  # system monitor
+  monitor
+
+  # network manager application
+  networkmanagerapplet
+
+  # bluetooth manager application
+  blueman
+
+  # brighness manager application 
+  brightnessctl
+
+  # hyprland pkgs
+  hyprlandPlugins.borders-plus-plus
   ];
 
+  fonts.packages = with pkgs; [
+    font-awesome
+
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
