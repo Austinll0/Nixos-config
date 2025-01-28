@@ -34,12 +34,14 @@
                             # Import the previous configuration.nix we used,
                             # so the old configuration file still takes effect
                             ./hosts/laptop
+			    ./common
                     ];
                 };
 		virtual = nixpkgs.lib.nixosSystem {
 		 	inherit system;
  			modules = [
 				./hosts/virtual
+				./common
 			];
             	};
 	    };
