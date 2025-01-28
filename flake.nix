@@ -36,7 +36,13 @@
                             ./hosts/laptop
                     ];
                 };
-            };
+		virtual = nixpkgs.lib.nixosSystem {
+		 	inherit system;
+ 			modules = [
+				./hosts/virtual
+			];
+            	};
+	    };
             homeConfigurations = {
                 # My configs
                 austinl = home-manager.lib.homeManagerConfiguration {
