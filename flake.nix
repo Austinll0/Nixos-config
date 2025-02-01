@@ -44,6 +44,13 @@
 				./common
 			];
             	};
+                desktop = nixpkgs.lib.nixosSystem {
+		 	inherit system;
+ 			modules = [
+				./hosts/virtual
+				./common
+			];
+            	};
 	    };
             homeConfigurations = {
                 # My configs
