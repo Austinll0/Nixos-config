@@ -21,13 +21,13 @@
     sysprof
     gnome-shell-extensions
    
-    adwaita-icon-theme
+    #adwaita-icon-theme
     #nixos-background-info
-    gnome-backgrounds
+    #gnome-backgrounds
     gnome-bluetooth
-    gnome-color-manager
-    gnome-control-center
-    gnome-shell-extensions
+    #gnome-color-manager
+    #gnome-control-center
+    #gnome-shell-extensions
     gnome-tour # GNOME Shell detects the .desktop file on first log-in.
     gnome-user-docs
     glib # for gsettings program
