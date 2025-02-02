@@ -8,6 +8,9 @@ in
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    # Enable flakes and the new CLI tool
+    nix.settings.experimental-features = ["nix-command" "flakes"];
+
     # Enable Networking
     networking.networkmanager.enable = true;
 
@@ -43,4 +46,4 @@ in
         # jack.enable = true; #enable if you want to use JACK applications
         # media-session.enable = true; # currently enabled by default
     };
-};
+}

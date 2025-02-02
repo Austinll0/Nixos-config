@@ -5,7 +5,9 @@ let sddm-astronaut = pkgs.sddm-astronaut.override{
 	};
 };
 in {
-  services.xserver.enable = true;
+  imports = [
+    ./xserver.nix
+  ];
   services.displayManager.sddm = {
 	  enable = true;
 	  package = pkgs.kdePackages.sddm;
