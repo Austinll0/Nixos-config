@@ -1,6 +1,7 @@
 {pkgs,...}:
 {   
     imports = [
+        ./steam.nix
         ./sddm.nix
         ./plymouth.nix
         ./gnome.nix

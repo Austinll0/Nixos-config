@@ -19,7 +19,6 @@
             swww
             spotify		
             discord
-            protonup-qt
             dolphin
     ];
 
