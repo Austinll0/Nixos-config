@@ -1,13 +1,14 @@
 {pkgs,...}:
 
 {
-    programs.steam = {
-        enable = true;
-        remotePlay.openFirewall = true;
-        dedicatedServer.openFirewall = true;
-        localNetworkGameTransfers.openFirewall = true;
+    config = mkIf steamModule.enable {
+        programs.steam = {
+            enable = true;
+            remotePlay.openFirewall = true;
+            dedicatedServer.openFirewall = true;
+            localNetworkGameTransfers.openFirewall = true;
+        };
+        environment.systemPackages = with pkgs; [protonup-qt];
     };
-    environment.systemPackage = with pkgs; [protonup-qt];
-
 
 }
