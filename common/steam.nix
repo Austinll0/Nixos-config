@@ -1,7 +1,7 @@
-{pkgs,...}:
+{lib,pkgs,config,...}:
 
 {
-    config = mkIf steamModule.enable {
+    config = lib.mkIf config.steamModule.enable {
         programs.steam = {
             enable = true;
             remotePlay.openFirewall = true;

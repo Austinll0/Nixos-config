@@ -6,12 +6,14 @@
 
 {
   networking.hostName = "laptop"; # Define your hostname.
-
+  # modules to include
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/common.nix
     ];
+  # module options
+
   # hyprland 
   programs.hyprland.enable = true;
 
@@ -43,8 +45,6 @@
   nixpkgs.config.allowUnfree = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  # steam
-  programs.steam.enable = true;
     # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

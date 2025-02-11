@@ -1,10 +1,10 @@
-{config,...}:
+{lib, onfig,...}:
 {
 options = {
-    steamModule.enable = mkEnableOption "enables steam module";
+    steamModule.enable = lib.mkEnableOption "enables steam module";
 
 };
 config = {
-    steamModule.enable = mkDefault true;
+    steamModule.enable = lib.mkDefault true;
 };
 }
