@@ -9,12 +9,12 @@
         ./git.nix
         ./hyprland/default.nix
         ./waybar/default.nix
+        ./rofi/default.nix
     ];
     home.packages = with pkgs; [ 
             # hyprland stuff
             grim
             slurp
-            rofi
             mako
             swww
             spotify		
