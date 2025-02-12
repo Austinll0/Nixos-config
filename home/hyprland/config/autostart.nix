@@ -4,7 +4,8 @@
         exec-once =[
             # WALL PAPER MANAGER
             "swww init &"
-            "swww img ~/Wallpapers/observer.png"
+            "sleep 1" #small delay so sww can startup
+            "swww img ~/.dotfiles/Nixos-config/home/themes/observer/wallpaper.png"
             # WAYBAR
             "waybar &"
             # NETWORK MANAGER APPLET
