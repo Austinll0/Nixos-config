@@ -10,8 +10,9 @@
     ];
     wayland.windowManager.hyprland = {
         enable = true;
+        package = inputs.hyprland.packages.${pkgs.system}.hyprland;
         plugins = [
-            inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+            inputs.hyprland-plugins.packages."${pkgs.stdenv.hostPlatform.system}".borders-plus-plus
         ];
         settings = {
          source = "./pimp.conf";

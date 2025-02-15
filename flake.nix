@@ -30,6 +30,7 @@
                 # Laptop config
                 laptop = nixpkgs.lib.nixosSystem {
                     inherit system;
+                    specialArgs = {inherit inputs;};
                     modules = [
                             # Import the previous configuration.nix we used,
                             # so the old configuration file still takes effect
