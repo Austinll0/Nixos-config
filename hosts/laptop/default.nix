@@ -15,7 +15,12 @@
   # module options
 
   # hyprland 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    # set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
 
   # Bootloader.
   boot.kernelParams = ["i915.force_probe=7d55"]; # necessary for intel arc GPU, meteor lake gen

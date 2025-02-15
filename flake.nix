@@ -36,20 +36,23 @@
                             ./hosts/laptop
 			    ./common
                     ];
+                    specialArgs = {inherit inputs;};
                 };
 		virtual = nixpkgs.lib.nixosSystem {
-		 	inherit system;
- 			modules = [
-				./hosts/virtual
-				./common
-			];
+                    inherit system;
+                    modules = [
+                            ./hosts/virtual
+                            ./common
+                    ];
+                    specialArgs = {inherit inputs;};
             	};
                 desktop = nixpkgs.lib.nixosSystem {
-		 	inherit system;
- 			modules = [
-				./hosts/virtual
-				./common
-			];
+                    inherit system;
+                    modules = [
+                            ./hosts/virtual
+                            ./common
+                    ];
+                    specialArgs = {inherit inputs;};
             	};
 	    };
             homeConfigurations = {
@@ -58,6 +61,7 @@
                     inherit pkgs;
                     modules = [./home  ];
                 };
+                    extraSpecialArgs = {inherit inputs;};
             };
         };
 }
