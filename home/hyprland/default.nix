@@ -1,4 +1,4 @@
-{pkgs,...}:
+{pkgs,inputs, ...}:
 {
     imports = [
     ./config/binds.nix
@@ -10,6 +10,14 @@
     ];
     wayland.windowManager.hyprland = {
         enable = true;
+        plugins = [
+            inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+        ];
+        settings = {
+         source = "./pimp.conf";
+        };
     };
+
+    home.file."config/hypr/pimp.conf".source = ../themes/observer/hypr/pimp.conf;
 }
 

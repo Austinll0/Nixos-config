@@ -57,6 +57,7 @@
                 austinl = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [./home  ];
+                    extraSpecialArgs = {inherit inputs;};
                 };
             };
         };
