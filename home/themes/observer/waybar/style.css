@@ -1,101 +1,74 @@
 * {
-    margin: 0;
-    font-family: 'Bitstream Vera Sans';
-    font-size: 14;
+	font-size: 20px;
+	font-family: monospace;
 }
 
 window#waybar {
-    background-color: transparent;
-    color: #beb7cc;
+	background: #292b2e;
+	color: #fdf6e3;
 }
 
-label:disabled,
-button:disabled {
-    color: inherit;
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: #1a1a1a;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: #292b2e;
+	background: #1a1a1a;
 }
 
-.modules-left:first-child {
-    margin-left: 70px;
-}
-
-.modules-right:last-child {
-    margin-right: 70px;
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray {
+	background: #1a1a1a;
 }
 
 #workspaces button {
-    background-color: transparent;
-    color: #beb7cc;
+	padding: 0 2px;
+	color: #fdf6e3;
 }
-
+#workspaces button.focused {
+	color: #268bd2;
+}
 #workspaces button:hover {
-    background: #b0a3cc;
-    color: #242226;
-    border: 1px solid #b0a3cc;
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: #1a1a1a;
+	border: #1a1a1a;
+	padding: 0 3px;
 }
 
-/* #workspaces button.focused {  */
-/* changed for hyprland */
-#workspaces button.active {
-    border-color: #beb7cc;
-    font-weight: bold;
+#pulseaudio {
+	color: #268bd2;
 }
-
-#workspaces button.urgent {
-    background-color: #4a3d66;
-    color: #d8d1e5;
+#memory {
+	color: #2aa198;
+}
+#cpu {
+	color: #6c71c4;
+}
+#battery {
+	color: #859900;
+}
+#disk {
+	color: #b58900;
 }
 
 #clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#custom-media,
-#mode,
-#idle_inhibitor,
-#scratchpad,
 #pulseaudio,
-#mpd,
-#tray,
-#workspaces button {
-    border: 1px solid transparent;
-    border-radius: 15;
-    padding: 4px 10px 4px 10px;
-    
-    margin: 6px 10px 6px 0px;
-    
-    box-shadow: 0 0;
- }
-
-
-#tray {
-    margin-right: 0;
-}
-
-#clock {
-    margin-left: 70px;
-    margin-right: 70px;
-}
-
-#battery {
-    background-color: transparent;
-    color: #beb7cc;
-}
-
-#battery.charging, #battery.plugged {
-    background-color: #57497a;
-    color: #dcd8e5;
-}
-
-#battery.critical:not(.charging) {
-    background-color: #4a3d66;
-    color: #d8d1e5;
-}
-
-#temperature.critical {
-    background-color: #4a3d66;
-    color: #d8d1e5;
+#memory,
+#cpu,
+#battery,
+#disk {
+	padding: 0 10px;
 }

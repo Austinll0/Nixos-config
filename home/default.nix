@@ -6,6 +6,7 @@
     nixpkgs.config.allowUnfreePredicate = (pkg: true);
     imports = [
         ./vim/default.nix
+        ./shell/default.nix
         ./git.nix
         ./hyprland/default.nix
         ./waybar/default.nix
