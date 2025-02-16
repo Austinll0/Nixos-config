@@ -5,11 +5,12 @@
     home.homeDirectory = "/home/austinl";
     nixpkgs.config.allowUnfreePredicate = (pkg: true);
     imports = [
-        ./shell/default.nix
+        ./vim/default.nix
         ./git.nix
         ./hyprland/default.nix
         ./waybar/default.nix
         ./rofi/default.nix
+        ./kitty/default.nix
     ];
     home.packages = with pkgs; [ 
             # hyprland stuff
