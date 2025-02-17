@@ -1,5 +1,5 @@
 # Random common things across builds that I don't fully understand
-{config, pkgs, ...}:
+{inputs, config, pkgs, ...}:
 let 
 localeSetting = "en_US.UTF-8";
 in
@@ -13,6 +13,8 @@ in
 
     # Enable Networking
     networking.networkmanager.enable = true;
+    # Home-manager
+    inputs.home-manager.backupFileExtension = "hmbackup";
 
     # Set time zone
     time.timeZone = "America/New_York";

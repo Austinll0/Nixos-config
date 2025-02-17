@@ -49,7 +49,7 @@
                 desktop = nixpkgs.lib.nixosSystem {
                     inherit system;
                     modules = [
-                            ./hosts/virtual
+                            ./hosts/desktop
                             ./common
                     ];
                     specialArgs = {inherit inputs;};
