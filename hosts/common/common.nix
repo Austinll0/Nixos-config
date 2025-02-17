@@ -1,7 +1,7 @@
 # Random common things across builds that I don't fully understand
-{inputs, config, pkgs, ...}:
+{ inputs, config, pkgs, ...}:
 let 
-localeSetting = "en_US.UTF-8";
+    localeSetting = "en_US.UTF-8";
 in
 {
     # Bootloader
@@ -13,8 +13,21 @@ in
 
     # Enable Networking
     networking.networkmanager.enable = true;
-    # Home-manager
-    inputs.home-manager.backupFileExtension = "hmbackup";
+
+    # Allow unfree packages
+    nixpkgs.config.allowUnfree = true;
+
+    # Set user
+
+    # Define a user account. Don't forget to set a password with ‘passwd’.
+    users.users.austinl = {
+        isNormalUser = true;
+        description = "Austin LaFever";
+        extraGroups = [ "networkmanager" "wheel" ];
+        packages = with pkgs; [
+            #  thunderbird
+            ];
+    };
 
     # Set time zone
     time.timeZone = "America/New_York";

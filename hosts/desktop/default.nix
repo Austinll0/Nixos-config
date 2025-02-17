@@ -2,25 +2,20 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ inputs,config, pkgs, ... }:
 
 {
-  networking.hostName = "desktop"; # Define your hostname.
+  # Define hostname
+  networking.hostName = "desktop";
+
   # modules to include
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/common.nix
     ];
-  # Enable the hyprland Desktop Environment
-  programs.hyprland = {
-      enable = true;
-      # set the flake package
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
 
-  # Boot steps
+  # Boot stuff
   services.xserver.videoDrivers = ["amdgpu"];
   boot.initrd.kernelModules = ["amdgpu"]; 
   hardware.opengl = {
@@ -38,34 +33,9 @@
       fsType = "ext4";
     };
 
-  #other things?
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.austinl = {
-    isNormalUser = true;
-    description = "Austin LaFever";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
-
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "austinl";
-
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  #systemd.services."getty@tty1".enable = false;
-  #systemd.services."autovt@tty1".enable = false;
-
   # Install firefox.
   programs.firefox.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

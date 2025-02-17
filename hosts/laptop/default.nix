@@ -14,14 +14,6 @@
     ];
   # module options
 
-  # hyprland 
-  programs.hyprland = {
-    enable = true;
-    # set the flake package
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
-
   # Bootloader.
   boot.kernelParams = ["i915.force_probe=7d55"]; # necessary for intel arc GPU, meteor lake gen
 
@@ -29,28 +21,10 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.austinl = {
-    isNormalUser = true;
-    description = "Austin laFever";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
-
-  # Enable automatic login for the user.
-  #services.displayManager.autoLogin.enable = true;
-  #services.displayManager.autoLogin.user = "austinl";
-
   # Install firefox.
   programs.firefox.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-    # List packages installed in system profile. To search, run:
+  # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   # text editor
@@ -71,7 +45,6 @@
 
   fonts.packages = with pkgs; [
     font-awesome
-
   ];
 
   # This value determines the NixOS release from which the default
