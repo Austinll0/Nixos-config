@@ -17,8 +17,10 @@
             "$mainMod, super_l, exec, $menu"
 
             # SPECIAL WORKSPACE
-            "$mainMod, S, togglespecialworkspace, magic"
-            "$mainMod SHIFT, S, movetoworkspace, special:magic"
+            "$mainMod, S, togglespecialworkspace, steam"
+            "$mainMod SHIFT, S, movetoworkspace, special:steam"
+            "$mainMod, D, togglespecialworkspace, discord"
+            "$mainMod SHIFT, D, movetoworkspace, special:discord"
 
             # CHANGE ACTIVE WINDOW
             "$mainMod, left, movefocus, l"
