@@ -1,0 +1,16 @@
+markup=1
+actions=1
+
+# Format
+font=sans-serif 12
+border-color=#333333
+border-size=3
+border-radius=0
+margin=10,10,10,10
+padding=10,10,10,10,
+outer-margin=20,20,20,20
+background-color=#3b393f
+text-color=#d6cee5
+width=440
+height=300
+default-timeout = 5

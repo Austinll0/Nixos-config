@@ -11,12 +11,12 @@
         ./waybar/default.nix
         ./rofi/default.nix
         ./kitty/default.nix
+        ./mako/default.nix
     ];
     home.packages = with pkgs; [ 
             # hyprland stuff
             grim
             slurp
-            mako
             swww
             spotify		
             discord
