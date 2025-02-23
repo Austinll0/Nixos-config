@@ -6,6 +6,7 @@
     ./config/autostart.nix 
     ./config/options.nix
     ./config/workspaces.nix
+    ./hyprpaper.nix
     ];
     wayland.windowManager.hyprland = {
         enable = true;
