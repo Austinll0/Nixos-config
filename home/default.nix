@@ -12,6 +12,7 @@
         ./rofi/default.nix
         ./kitty/default.nix
         ./mako/default.nix
+        ./wlogout/default.nix
     ];
     home.packages = with pkgs; [ 
             # hyprland stuff
