@@ -3,6 +3,6 @@
     programs.hyprlock = {
         enable = true;
     };
-    home.file.".config/hypr/hyprlock.conf".source= ../themes/observer/hypr/hyprland.conf
+    home.file.".config/hypr/hyprlock.conf".source= ../themes/observer/hypr/hyprlock.conf;
 }
 
