@@ -1,7 +1,8 @@
 {inputs,pkgs,...}:
 {
-    services.hyprlock = {
+    programs.hyprlock = {
         enable = true;
     };
+    home.file.".config/hypr/hyprlock.conf".source= ../themes/observer/hypr/hyprland.conf
 }
 
