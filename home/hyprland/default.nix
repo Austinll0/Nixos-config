@@ -1,4 +1,4 @@
-{inputs,pkgs,...}:
+{inputs,pkgs,config,...}:
 {
     imports = [
     ./config/binds.nix
@@ -19,6 +19,6 @@
             source = "pimp.conf";
         };
     };
-    home.file.".config/hypr/pimp.conf".source = ../themes/observer/hypr/pimp.conf;
+    home.file.".config/hypr/pimp.conf".source = ../themes/${config.theme}/hypr/pimp.conf;
 }
 

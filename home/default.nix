@@ -24,7 +24,7 @@
             dolphin
     ];
     theme = "observer";
-    home.file.".config/wallpaper.png".source = themes/observer/wallpaper.png;
+    home.file.".config/wallpaper.png".source = themes/${config.theme}/wallpaper.png;
     home.stateVersion = "24.11";
     
     programs.home-manager.enable = true;
