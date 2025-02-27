@@ -13,6 +13,7 @@
         ./kitty/default.nix
         ./mako/default.nix
         ./wlogout/default.nix
+        ./homeOptions.nix
     ];
     home.packages = with pkgs; [ 
             # hyprland stuff
@@ -22,6 +23,7 @@
             discord
             dolphin
     ];
+    theme = "observer";
     home.file.".config/wallpaper.png".source = themes/observer/wallpaper.png;
     home.stateVersion = "24.11";
     
