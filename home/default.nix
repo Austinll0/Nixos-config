@@ -13,6 +13,7 @@
         ./kitty/default.nix
         ./mako/default.nix
         ./wlogout/default.nix
+        ./firefox
         ./homeOptions.nix
     ];
     home.packages = with pkgs; [ 
