@@ -1,6 +1,6 @@
 {
     wayland.windowManager.hyprland.settings = {
-        "$terminal" = "kitty";
+        "$terminal" = "foot";
         "$fileManager" = "dolphin";
         "$menu" = "rofi -show drun --show-images";
         "$mainMod" = "SUPER";

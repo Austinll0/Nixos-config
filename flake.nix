@@ -45,7 +45,7 @@
                     inherit system;
                     modules = [
                             ./hosts/virtual
-                            ./common
+			    ./common
                     ];
                     specialArgs = {inherit inputs;};
             	};
