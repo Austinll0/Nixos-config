@@ -5,6 +5,7 @@
     home.homeDirectory = "/home/austinl";
     nixpkgs.config.allowUnfreePredicate = (pkg: true);
     imports = [
+        ./lf
         ./vim/default.nix
         ./git.nix
         ./hyprland/default.nix
@@ -22,7 +23,6 @@
             slurp
             spotify		
             discord
-            dolphin
     ];
     theme = "observer";
     home.file.".config/wallpaper.png".source = themes/${config.theme}/wallpaper.png;
