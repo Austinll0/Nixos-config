@@ -59,12 +59,32 @@
             	};
 	    };
             homeConfigurations = {
-                # My configs
+                #default
                 austinl = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [./home  ];
                     extraSpecialArgs = {inherit inputs nixpkgs;};
                 };
+                #dedicated configs per host
+                "austinl@laptop" = home-manager.lib.homeManagerConfiguration {
+                    inherit pkgs;
+                    modules = [./home  ];
+                    extraSpecialArgs = {inherit inputs nixpkgs;};
+                };
+                "austinl@desktop" = home-manager.lib.homeManagerConfiguration {
+                    inherit pkgs;
+                    modules = [./home  ];
+                    extraSpecialArgs = {inherit inputs nixpkgs;};
+                };
+                "austinl@virtual" = home-manager.lib.homeManagerConfiguration {
+                    inherit pkgs;
+                    modules = [
+                        ./home
+                        ./users/austinl/virtual.nix
+                    ];
+                    extraSpecialArgs = {inherit inputs nixpkgs;};
+                };
+
             };
         };
 }

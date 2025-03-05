@@ -1,6 +1,7 @@
+{config,...}:
 {
     wayland.windowManager.hyprland.settings = {
-        "$terminal" = "foot";
+        "$terminal" = config.hyprlandConf.term;
         "$fileManager" = "dolphin";
         "$menu" = "rofi -show drun --show-images";
         "$mainMod" = "SUPER";

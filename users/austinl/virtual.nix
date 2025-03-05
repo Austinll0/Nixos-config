@@ -1,0 +1,7 @@
+{config,...}:
+
+{
+    hyprlandConf.term = "foot";
+
+
+}
