@@ -8,6 +8,7 @@
     ./config/workspaces.nix
     ./hyprpaper.nix
     ./hyprlock.nix
+    ./hypridle.nix
     ];
     wayland.windowManager.hyprland = {
         enable = true;
