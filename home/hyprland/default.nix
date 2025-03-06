@@ -14,6 +14,7 @@
         package = inputs.hyprland.packages.${pkgs.system}.hyprland;
         plugins = [
             inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
+            inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
         ];
         settings = {
             source = "pimp.conf";
