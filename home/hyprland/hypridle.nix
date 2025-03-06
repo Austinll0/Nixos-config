@@ -7,14 +7,9 @@
             };
             listener = [ 
                 {
-                    timeout = 30;
+                    timeout = 60;
                     on-timeout = "hyprlock";
-                };
-                {
-                    timeout = 15;
-                    on-timeout = "test=$(brightnessctl get); brightnessctl set 0";
-                    on-resume = "brightnessctl set $test";
-                };
+                }
             ];
         };
 

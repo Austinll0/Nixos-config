@@ -10,6 +10,8 @@
             "nm-applet --indicator &"
             # BLUETOOTH APPLET
             "blueman-applet &"
+            # HYPRIDLE
+            "systemctl --user start hypridle.service"
         ];
     };
 }
