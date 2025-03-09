@@ -12,6 +12,9 @@
             "blueman-applet &"
             # HYPRIDLE
             "systemctl --user start hypridle.service"
+            # APPS
+            "discord"
+            "steam"
         ];
     };
 }
