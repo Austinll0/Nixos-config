@@ -1,5 +1,6 @@
+{lib,config,...}:
 {
-    services.hypridle = {
+    services.hypridle = lib.mkIf (config.hyprlandConf.idle.enable) {
         enable = true;
         settings = {
             general = {
@@ -7,7 +8,7 @@
             };
             listener = [ 
                 {
-                    timeout = 300;
+                    timeout = 30;
                     on-timeout = "hyprlock";
                 }
             ];

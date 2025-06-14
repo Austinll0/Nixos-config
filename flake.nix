@@ -68,12 +68,18 @@
                 #dedicated configs per host
                 "austinl@laptop" = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
-                    modules = [./home  ];
+                    modules = [
+                    ./home
+                    ./users/austinl/laptop.nix
+                    ];
                     extraSpecialArgs = {inherit inputs nixpkgs;};
                 };
                 "austinl@desktop" = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
-                    modules = [./home  ];
+                    modules = [
+                    ./home
+                    ./users/austinl/desktop.nix
+                    ];
                     extraSpecialArgs = {inherit inputs nixpkgs;};
                 };
                 "austinl@virtual" = home-manager.lib.homeManagerConfiguration {

@@ -16,6 +16,7 @@
                 example = "kitty";
                 description = "terminal to use with super+q";
             };
+            idle.enable = lib.mkEnableOption "enables hypridle option";
         };
     };
 }

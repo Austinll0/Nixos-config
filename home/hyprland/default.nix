@@ -1,4 +1,4 @@
-{inputs,pkgs,config,...}:
+{lib,inputs,pkgs,config,...}:
 {
     imports = [
     ./config/binds.nix
