@@ -23,6 +23,7 @@
             slurp
             spotify		
             discord
+            deepin-calculator
     ];
     theme = "observer";
     home.file.".config/wallpaper.png".source = themes/${config.theme}/wallpaper.png;
