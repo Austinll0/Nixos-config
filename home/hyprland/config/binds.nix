@@ -17,7 +17,7 @@
             "$mainMod, J, togglesplit" #dwindle"
             "$mainMod, L, exec, hyprlock"
             "$mainMod, super_l, exec, $menu"
-            "$mainMod, tab, hyprexpo:expo, toggle"
+            #"$mainMod, tab, hyprexpo:expo, toggle"
 
             # SPECIAL WORKSPACE
             "$mainMod, S, togglespecialworkspace, steam"
