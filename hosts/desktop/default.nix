@@ -18,9 +18,10 @@
   # Boot stuff
   services.xserver.videoDrivers = ["amdgpu"];
   boot.initrd.kernelModules = ["amdgpu"]; 
-  hardware.opengl = {
+  hardware.graphics = {
+    #extraPackages = [pkgs.mesa.drivers];
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Define Drives
