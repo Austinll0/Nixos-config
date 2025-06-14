@@ -16,6 +16,7 @@
             "$mainMod, P, pseudo" #dwindle
             "$mainMod, J, togglesplit" #dwindle"
             "$mainMod, L, exec, hyprlock"
+            "$mainMod, F, fullscreen"
             "$mainMod, super_l, exec, $menu"
             #"$mainMod, tab, hyprexpo:expo, toggle"
 
