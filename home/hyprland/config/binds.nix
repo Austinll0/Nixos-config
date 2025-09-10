@@ -84,6 +84,10 @@
             ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
             ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
         ];
+        gesture = [
+            "3,right,workspace, r+1"
+            "3,left,workspace, r-1"
+        ];
     };
 }
 

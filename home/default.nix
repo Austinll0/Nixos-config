@@ -19,6 +19,7 @@
     ];
     home.packages = with pkgs; [ 
             # hyprland stuff
+            zoom-us
             grim
             slurp
             spotify		

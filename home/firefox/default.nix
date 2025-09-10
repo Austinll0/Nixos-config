@@ -6,34 +6,37 @@ in
     programs.firefox = {
         enable = true;
         profiles.austinl = {
-            bookmarks = [
-                {
-                    name = "myNixOs";
-                    tags = ["Nix"];
-                    keyword = "myNix";
-                    url = "https://mynixos.com/";
-                }
-                {
-                    name = "Nix Packages";
-                    tags = ["Nix"];
-                    keyword = "pkgs";
-                    url = "https://search.nixos.org/packages";
-                }
-                {
-                    name = "Intro to Nix";
-                    tags = ["Nix"];
-                    keyword = "NixIntro";
-                    url = "https://nixos-and-flakes.thiscute.world/introduction/";
-                }
-                {
-                    name = "Nix example config";
-                    tags = ["Nix"];
-                    keyword = "NixEx";
-                    url = "https://github.com/luravoid/nixos-config/tree/main";
-                }
-            ];
+            bookmarks = {
+                force = true;
+                settings = [
+                        {
+                            name = "myNixOs";
+                            tags = ["Nix"];
+                            keyword = "myNix";
+                            url = "https://mynixos.com/";
+                        }
+                        {
+                            name = "Nix Packages";
+                            tags = ["Nix"];
+                            keyword = "pkgs";
+                            url = "https://search.nixos.org/packages";
+                        }
+                        {
+                            name = "Intro to Nix";
+                            tags = ["Nix"];
+                            keyword = "NixIntro";
+                            url = "https://nixos-and-flakes.thiscute.world/introduction/";
+                        }
+                        {
+                            name = "Nix example config";
+                            tags = ["Nix"];
+                            keyword = "NixEx";
+                            url = "https://github.com/luravoid/nixos-config/tree/main";
+                        }
+                ];
+            };
            
-            extensions = with ffpackages; [
+            extensions.packages = with ffpackages; [
                 mtab
                 reddit-enhancement-suite
                 #lastpass-password-manager
