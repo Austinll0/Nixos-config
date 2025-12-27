@@ -17,7 +17,7 @@
         ./firefox
         ./homeOptions.nix
 
-        ./themes/${config.theme}/default.nix
+        ./themes/default.nix
     ];
     home.packages = with pkgs; [ 
             # hyprland stuff
