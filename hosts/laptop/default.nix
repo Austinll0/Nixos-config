@@ -38,7 +38,10 @@
 
   # brighness manager application 
   brightnessctl
+
   ];
+
+  virtualisation.virtualbox.host.enable = true;
 
   fonts.packages = with pkgs; [
     font-awesome

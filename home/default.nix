@@ -16,6 +16,8 @@
         ./wlogout/default.nix
         ./firefox
         ./homeOptions.nix
+
+        ./themes/${config.theme}/default.nix
     ];
     home.packages = with pkgs; [ 
             # hyprland stuff
@@ -24,10 +26,8 @@
             slurp
             spotify		
             discord
-            deepin.deepin-calculator
     ];
     theme = "observer";
-    home.file.".config/wallpaper.png".source = themes/${config.theme}/wallpaper.png;
     home.stateVersion = "24.11";
     
     programs.home-manager.enable = true;
