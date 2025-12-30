@@ -8,7 +8,8 @@
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "mpris"
+    "mpris" ,
+    "clock"
   ],
   "modules-right": [
     "memory",
