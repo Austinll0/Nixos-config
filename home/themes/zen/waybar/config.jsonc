@@ -8,21 +8,16 @@
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "mpris" ,
     "clock"
   ],
   "modules-right": [
-    "memory",
-    "disk",
     "custom/screenrecording-indicator",
-    "custom/idle-indicator",
-    "network",
-    "bluetooth",
     "backlight",
     "pulseaudio",
     "battery",
     "clock",
-    "tray"
+    "tray",
+    "custom/power"
   ],
   "custom/screenrecording-indicator": {
     "on-click": "~/.config/hypr/scripts/screenrecord",
@@ -41,6 +36,11 @@
     "tooltip": false,
     "on-click": "~/dotfiles/install/themes/symphony switch",
     "on-click-right": "~/.config/hypr/scripts/cycle-wallpaper next"
+  },
+  "custom/power": {
+    "format" : "⏻  ",
+    "tooltip": false,
+    "on-click": "wlogout"
   },
   "hyprland/workspaces": {
     "on-click": "activate",
