@@ -61,4 +61,9 @@ in
         # jack.enable = true; #enable if you want to use JACK applications
         # media-session.enable = true; # currently enabled by default
     };
+    # Font packages
+    fonts.packages = with pkgs; [
+        font-awesome
+        nerd-fonts.caskaydia-cove
+    ];
 }
