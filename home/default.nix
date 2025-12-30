@@ -27,7 +27,7 @@
             spotify		
             discord
     ];
-    theme = "observer";
+    theme = "zen";
     home.stateVersion = "24.11";
     
     programs.home-manager.enable = true;
