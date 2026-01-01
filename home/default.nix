@@ -26,6 +26,8 @@
             slurp
             spotify		
             discord
+            pinta
+            qalculate-qt
     ];
     theme = "zen";
     home.stateVersion = "24.11";
