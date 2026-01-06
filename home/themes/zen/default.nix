@@ -1,9 +1,10 @@
-{config,lib,...}:
+{config,lib,pkgs,...}:
 let 
     enabled = config.theme == "zen";
 in
 {
     config = lib.mkIf enabled {
+        home.packages = with pkgs; [ starship ];
         home.file.".config/wallpaper.png".source = ./wallpaper.png;
         #home.file.".config/mako/config".source = ./mako/config;
 
@@ -31,5 +32,6 @@ in
             source = ./kitty;
             recursive = true;
         };
+        home.file.".config/starship.toml".source = ./starship.toml;
     };
 }
