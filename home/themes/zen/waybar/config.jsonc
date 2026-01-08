@@ -164,7 +164,7 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "kitty --class=Wiremix -e wiremix",
+    "on-click": "~/.config/waybar/volume_popup.sh",
     "on-click-right": "pamixer -t",
     "tooltip-format": "🎵 {volume}%",
     "scroll-step": 5,
