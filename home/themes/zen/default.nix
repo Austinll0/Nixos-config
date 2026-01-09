@@ -6,7 +6,7 @@ in
     config = lib.mkIf enabled {
         home.packages = with pkgs; [ starship ];
         home.file.".config/wallpaper.png".source = ./wallpaper.png;
-        #home.file.".config/mako/config".source = ./mako/config;
+        home.file.".config/mako/config".source = ./mako/config;
 
         home.file.".config/hypr/pimp.conf".source = ./hypr/pimp.conf;
         home.file.".config/hypr/hyprlock.conf".source = ./hypr/hyprlock.conf;

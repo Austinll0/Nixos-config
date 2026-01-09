@@ -13,4 +13,4 @@ background-color=#3b393f
 text-color=#d6cee5
 width=440
 height=300
-default-timeout = 5
+default-timeout=5000
