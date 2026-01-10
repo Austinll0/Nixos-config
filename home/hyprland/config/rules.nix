@@ -1,20 +1,32 @@
 {
 # WINDOW RULES
 wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
-        # IGNORE MAXIMIZE REQUESTS FROM APPS
-        "suppressevent maximize, class:.*"
-        "suppressevent fullscreen maximize, class:.*"
-
-        # FIX SOME DRAGGING ISSUES WITH WAYLAND
-        "nofocus, class:^$,title:^$,xwayland:1,floating:1, fullscreen:0, pinned:0"
-        
+    # ANONYMOUS RULES
+    windowrule = [
+ 
         # KEEP DISCORD ON SCRATCHPAD
-        "workspace special:discord silent, class:discord"
-
+        "match:class discord, workspace special:discord silent"
         # KEEP STEAM ON SCRATCHPAD
-        "workspace special:steam silent, class: steam"
+        "match:class steam, workspace special:steam silent"
     ];
+
+    # IGNORE MAXIMIZE REQUESTS FROM APPS
+    "windowrule[supressing]" = {
+        "match:class" = ".*";
+        suppress_event = "fullscreen maximize";
+    };
+
+    # FIX SOME DRAGGING ISSUES WITH WAYLAND
+    "windowrule[nofoc]" = {
+        "match:class" = "^$";
+        "match:title" = "^$";
+        "match:xwayland" = "true";
+        "match:float" = "true";
+        "match:fullscreen" = "false";
+        "match:pin" = "false";
+        
+        "no_focus" = "on";
+    };
 };
 
 }
