@@ -1,0 +1,13 @@
+# upgrading
+sudo nixos-rebuild --flake . --upgrade #upgrades channels
+home-manager switch --flake . #upgrade home manager after
+
+# deleting old gens
+nixos-rebuild list-generations
+
+sudo nix-collect-garbage -d # delete old versions and unused packages
+                            # rebuild after to update everything and remove the old gens
+
+nix-env --delete-generations 1 2 3 # delete specific gens
+
+nix-env --delete-generations +3 # keep 3 most recent gens

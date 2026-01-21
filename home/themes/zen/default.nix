@@ -4,7 +4,17 @@ let
 in
 {
     config = lib.mkIf enabled {
-        home.packages = with pkgs; [ starship ];
+        programs.starship = {
+            enable = true;
+            enableBashIntegration = true;
+        };
+        programs.bash = {
+            enable = true;
+            shellAliases = {
+                ls = "ls --color=auto";
+            };
+        };
+        programs.dircolors.enable = true;
         home.file.".config/wallpaper.png".source = ./wallpaper.png;
         home.file.".config/mako/config".source = ./mako/config;
 
