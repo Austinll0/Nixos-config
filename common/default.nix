@@ -7,6 +7,6 @@
         ./plymouth.nix
         ./gnome.nix
         ./home-manager.nix
-        ./hyprland.nix
+        ./niri.nix
     ];
 }
