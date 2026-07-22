@@ -4,14 +4,12 @@
     inputs = {
         # NixOS official package source, using the nixos-24.11 branch here
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-        
-        #hyprland setup
-        hyprland.url = "github:hyprwm/Hyprland";
-        hyprland-plugins = {
-                url = "github:hyprwm/hyprland-plugins";
-                inputs.hyprland.follows = "hyprland";
-        };
-        # home manager setup 
+        # noctalia setup
+        noctalia = {
+            url = "github:noctalia-dev/noctalia";
+            inputs.nixpkgs.follows = "nixpkgs";
+        }
+       # home manager setup 
         home-manager = {
                 url = "github:nix-community/home-manager/release-26.05";
                 inputs.nixpkgs.follows = "nixpkgs";

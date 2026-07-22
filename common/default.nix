@@ -8,5 +8,6 @@
         ./gnome.nix
         ./home-manager.nix
         ./niri.nix
+        ./noctalia.nix
     ];
 }

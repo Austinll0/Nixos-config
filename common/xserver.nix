@@ -10,7 +10,7 @@
         # Enable touchpad support ( default in most desktopManagers )
         # libinput.enable = true;
     };
-
+    environment.systemPackages = [pkgs.xwayland-satellite];
 
     # Enable touchpad support (default in most desktopManagers)
     # services

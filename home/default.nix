@@ -8,21 +8,12 @@
         ./lf
         ./vim/default.nix
         ./git.nix
-        ./waybar/default.nix
         ./rofi/default.nix
         ./kitty/default.nix
-        ./mako/default.nix
-        ./wlogout/default.nix
         ./firefox
         ./homeOptions.nix
-
-        ./themes/default.nix
     ];
     home.packages = with pkgs; [ 
-            # hyprland stuff
-            zoom-us
-            grim
-            slurp
             spotify		
             discord
             pinta
