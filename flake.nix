@@ -8,7 +8,7 @@
         noctalia = {
             url = "github:noctalia-dev/noctalia";
             inputs.nixpkgs.follows = "nixpkgs";
-        }
+        };
        # home manager setup 
         home-manager = {
                 url = "github:nix-community/home-manager/release-26.05";

@@ -8,10 +8,10 @@
         ./lf
         ./vim/default.nix
         ./git.nix
-        ./rofi/default.nix
         ./kitty/default.nix
         ./firefox
         ./homeOptions.nix
+        ./starship
     ];
     home.packages = with pkgs; [ 
             spotify		
@@ -19,7 +19,6 @@
             pinta
             qalculate-qt
     ];
-    theme = "zen";
     home.stateVersion = "24.11";
     
     programs.home-manager.enable = true;

@@ -43,5 +43,6 @@ in
                 ublock-origin
             ];
         };
+        configPath = ".mozilla/firefox";
     };
 }

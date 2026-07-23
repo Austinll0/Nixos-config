@@ -3,6 +3,7 @@ sudo flake update #upgrade channels
 sudo nixos-rebuild --flake . --upgrade #upgrades programs with new channels
 home-manager switch --flake . #upgrade home manager after
 #If you fuck this up again for the love of god make sure AI checks your versions first
+
 # deleting old gens
 nixos-rebuild list-generations
 
