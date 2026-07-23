@@ -4,7 +4,23 @@ format = """$os $directory $git_branch$git_status$line_break$character"""
 
 # right_format = """# $time# """
 
-palette = "colors"
+palette = "eldritch_abyss"
+
+# https://github.com/eldritch-theme/starship/blob/main/themes/colors.toml
+[palettes.eldritch_abyss]
+background  = "#171928" # Void Black
+currentline = "#252738" # Deep Sea Grey
+surface     = "#353746" # Benthic Surface
+overlay     = "#474852" # Hadal Overlay
+foreground  = "#d8e6e6" # Pale Specter
+comment     = "#506299" # Forgotten Rune
+cyan        = "#0396b3" # Abyssal Teal
+green       = "#2dcc82" # Phosphor Green
+orange      = "#d4a666" # Amber Ichor
+pink        = "#d154a1" # Dreamrot Pink
+purple      = "#8b75d9" # Shadow Violet
+red         = "#cc5860" # Crimson Omen
+yellow      = "#ccd663" # Sulfur Yellow
 
 [palettes.colors]
 mustard = '#af8700'

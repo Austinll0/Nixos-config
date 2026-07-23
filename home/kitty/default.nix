@@ -1,5 +1,7 @@
 {pkgs,config,...}:
 {
-home.packages = [pkgs.kitty];
-
+    programs.kitty = {
+        enable = true;
+        themeFile = "Eldritch-dark";
+    };
 }
