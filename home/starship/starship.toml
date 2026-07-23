@@ -45,6 +45,7 @@ ahead = '⇡${count}'
 behind = '⇣${count}'
 diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 format = '[[($all_status$ahead_behind )](fg:#ea6962)]($style)'
+untracked = ''
 
 [os]
 format = "[$symbol]($style)"
